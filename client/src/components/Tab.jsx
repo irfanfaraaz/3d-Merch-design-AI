@@ -10,11 +10,8 @@ const Tab = ({tab, isFilterTab , isActiveTab, handleClick}) => {
      key={tab.name}
      className={`tab-btn ${isFilterTab ? 'rounded-full glassmorphism': 'rounded-4' } `}
      onClick={handleClick}
-       onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                {handleClick}
-              }
-            }}
+     onKeyDown={(e) => {if(e.key === 'Enter') handleClick()}}
+      
       style={activeStyles}
     >
       <img src={tab.icon} alt={tab.name} 
